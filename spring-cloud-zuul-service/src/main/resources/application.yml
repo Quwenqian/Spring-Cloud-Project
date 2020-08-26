@@ -1,0 +1,17 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8716/eureka/
+spring:
+  application:
+    name: zuul-service
+server:
+  port: 9099
+zuul:
+  routes:
+    home:    #自定义路由名称
+      path: /dfbz/home/**    #映射url路径，是客户端在地址栏中输入的路径
+      url: http://localhost:9000/  #被映射的url路径，客户端在输入映射路径后，重定向到的url
+    order:    #自定义路由名称
+      path: /dfbz/order/**    #映射url路径，是客户端在地址栏中输入的路径
+      service-id: eureka-provider-order

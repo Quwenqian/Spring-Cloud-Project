@@ -1,0 +1,12 @@
+# 当前服务项目端口号信息
+server:
+  port: 8716
+# 服务注册中心配置
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

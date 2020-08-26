@@ -1,0 +1,23 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8716/eureka/
+
+
+spring:
+  application:
+    name: ribbon-customer
+
+server:
+  port: 9000
+
+# 以项目为单位进行负载策略配置
+eureka-provider:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /

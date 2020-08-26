@@ -1,0 +1,10 @@
+server:
+  port: 8084
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8716/eureka/
+# 当前服务的名称
+spring:
+  application:
+    name: eureka-provider-order

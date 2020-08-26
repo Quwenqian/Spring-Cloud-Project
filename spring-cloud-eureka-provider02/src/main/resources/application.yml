@@ -1,0 +1,22 @@
+server:
+  port: 8082
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8716/eureka/
+# 当前服务的名称
+spring:
+  application:
+    name: eureka-provider
+  cloud:
+    config:
+      label: master
+      prefile: publish
+      discovery:
+        enabled: true
+        service-id: config-server
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
